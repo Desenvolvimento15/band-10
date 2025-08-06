@@ -17,12 +17,12 @@
  const container = document.querySelector(".scroll-horizontal-content");
  const sections = gsap.utils.toArray(".pad15");
  const totalSections = sections.length;
- const containerWidth = 200 * totalSections;
+ const containerWidth = 400 * totalSections;
 
  gsap.set(container, { width: `${containerWidth}vw` });
 
  gsap.to(container, {
-   xPercent: -200 * (totalSections - 1),
+   xPercent: -400 * (totalSections - 1),
    ease: "none",
    scrollTrigger: {
      trigger: ".horizontal-scroll-wrapper",
