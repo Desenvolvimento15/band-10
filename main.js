@@ -13,16 +13,15 @@
   });
 
 
-
 $(document).ready(function () {
-  $(".health-slide").slick({
+  $(".slider").slick({
     dots: false,
+    arrows: true,
     infinite: true,
-    speed: 300,
+    speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
-    
+    adaptiveHeight: true,
+    rtl: true, // <-- isso faz os slides irem da direita para a esquerda
   });
 });
-
-
