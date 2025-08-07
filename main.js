@@ -12,24 +12,17 @@
     });
   });
 
-gsap.registerPlugin(ScrollTrigger);
 
-const container = document.querySelector(".scroll-horizontal-content");
-const sections = gsap.utils.toArray(".pad15");
 
-// Calcula o scroll necessário
-const totalScroll = container.scrollWidth - window.innerWidth;
-
-gsap.to(container, {
-  x: -totalScroll,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".horizontal-scroll-wrapper",
-    start: "top top",
-    end: `+=${totalScroll}`,
-    scrub: 1,
-    pin: true,
-    snap: 1 / (sections.length - 1),
-  },
+$(document).ready(function () {
+  $(".health-slide").slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    
+  });
 });
+
 
