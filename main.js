@@ -12,23 +12,24 @@
     });
   });
 
- gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
- const container = document.querySelector(".scroll-horizontal-content");
- const sections = gsap.utils.toArray(".pad15");
- const totalSections = sections.length;
- const containerWidth = 400 * totalSections;
+const container = document.querySelector(".scroll-horizontal-content");
+const sections = gsap.utils.toArray(".pad15");
 
- gsap.set(container, { width: `${containerWidth}vw` });
+// Calcula o scroll necessário
+const totalScroll = container.scrollWidth - window.innerWidth;
 
- gsap.to(container, {
-   xPercent: -400 * (totalSections - 1),
-   ease: "none",
-   scrollTrigger: {
-     trigger: ".horizontal-scroll-wrapper",
-     pin: true,
-     scrub: 1,
-     snap: 1 / (totalSections - 1),
-     end: () => "+=" + window.innerWidth * (totalSections - 1),
-   },
- });
+gsap.to(container, {
+  x: -totalScroll,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".horizontal-scroll-wrapper",
+    start: "top top",
+    end: `+=${totalScroll}`,
+    scrub: 1,
+    pin: true,
+    snap: 1 / (sections.length - 1),
+  },
+});
+
