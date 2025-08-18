@@ -5,6 +5,7 @@
       slidesToScroll: 1,
       dots: false,
       arrows: false,
+      fade: true,
       infinite: true,
       autoplay: true,
       autoplaySpeed: 3000,
